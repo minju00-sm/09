@@ -6,24 +6,22 @@
 
 int main(int argc, char *argv[]) {
 	int i;
-	int grade[SIZE];
-	int sum=0;
+	int a[SIZE] = {1,2,3,4,5};
+	int b[SIZE] = {1,2,3,4,5};
+	int flag_same = 1;
 	
-	printf("%i명의 점수를 입력하세요.\n", SIZE);
 	
 	for (i=0; i<SIZE; i++)
 	{
-		printf("학생 성적을 입력하세요: ");
-		scanf("%d", &grade[i]);
-		sum += grade[i];
+		if (a[i] != b[i])
+		{
+			printf("%i-th element is diff.\n",i);
+			flag_same = 0;
+		}
 	}
-	#if 0	
-	for (i=0; i<SIZE; i++)
-		printf("grade[%d]=%d\n", i, grade[i]);
-	#endif
-	
-	printf("성적 평균: %i\n", sum/SIZE);
-	
+
+printf("Are a and b the same? %i\n", flag_same);
+
 	system("pause");
 	return 0;
 }
